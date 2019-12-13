@@ -366,3 +366,5 @@ public class IntEvent : UnityEvent<int> { }
 public class Vec3Event : UnityEvent<Vector3> { }
 [System.Serializable]
 public class StringEvent : UnityEvent<string> { }
+
+public delegate void FloatDelegate(float input);
