@@ -12,11 +12,35 @@ namespace GameSystem
     [DisallowMultipleComponent]
     public class TheMatrix : MonoBehaviour
     {
+        /// <summary>
+        /// 游戏初始化委托，在游戏开始时和游戏重新开始时调用
+        /// </summary>
+        public System.Action onGameInitialize;
+
         //流程--------------------------------
         private IEnumerator _Start()
         {
+            StartCoroutine(_StartScene());
             yield return 0;
-            //yield return _Logo();
+        }
+
+        //第一个场景
+        public string _startScene;
+        private IEnumerator _StartScene()
+        {
+            SceneManager.LoadScene(_startScene);
+
+            onGameInitialize?.Invoke();
+
+            //显示Logo
+            ResetGameMessage();
+            while (true)
+            {
+                yield return 0;
+                if (GetGameMessage(GameMessage.Next)) break;
+            }
+
+            //进入下一个场景
         }
 
         ////场景名字记为_name
@@ -289,14 +313,14 @@ namespace GameSystem
 #if UNITY_EDITOR
             if (test)
 #endif
-            StartCoroutine(_Start());
+                StartCoroutine(_Start());
 
 #if UNITY_EDITOR
             else
                 SceneManager.UnloadSceneAsync("System");
             if (saveData)
 #endif
-            LoadAll();
+                LoadAll();
 #if UNITY_EDITOR
             else
             {
@@ -325,7 +349,7 @@ namespace GameSystem
     /// </summary>
     public enum GameMessage
     {
-        Start,
+        LogoFinished,   //开始的Logo放出来了
         Next,
         Return,
         Exit
