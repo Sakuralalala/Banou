@@ -14,7 +14,8 @@ namespace GameSystem
             [Header("人物相关系统配置")]
             public float maxSpeed = 1;
 
-            public KeyCode interactKey = KeyCode.E;
+            public KeyCode menuKey = KeyCode.Space;
+            public KeyCode tortureKey = KeyCode.E;
         }
     }
 }

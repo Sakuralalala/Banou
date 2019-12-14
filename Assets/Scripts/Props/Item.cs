@@ -12,6 +12,7 @@ public class Item : MonoBehaviour
     public UnityEvent onEnter;
     public UnityEvent onExit;
     public bool forbidRepeatingInteraction = false; //防止重复交互
+    public KeyCode interactKey;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -34,7 +35,7 @@ public class Item : MonoBehaviour
         while (true)
         {
             yield return 0;
-            if (Input.GetKeyDown(GameSystem.LittleGirlSystem.Setting.interactKey))
+            if (Input.GetKeyDown(interactKey))
             {
                 output?.Invoke();
                 if (forbidRepeatingInteraction) yield break;
