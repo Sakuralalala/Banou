@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4426769022817493336}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4426769022946699027}
@@ -68,15 +68,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 92029ae4274050243b62374b0541cc51, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 2.057143, y: 3.0857143}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &4426769022946699039
@@ -89,10 +89,10 @@ GameObject:
   m_Component:
   - component: {fileID: 4426769022946699027}
   - component: {fileID: 4426769022946699024}
-  - component: {fileID: 4426769022946699025}
   - component: {fileID: 4426769022946699038}
+  - component: {fileID: 3035660108728386360}
   m_Layer: 0
-  m_Name: Door
+  m_Name: DoorRight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,7 +126,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -137,9 +137,21 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7591904, y: 1.8683122}
+  m_Size: {x: 1.5, y: 3}
   m_EdgeRadius: 0
---- !u!114 &4426769022946699025
+--- !u!114 &4426769022946699038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426769022946699039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d1743496a675364a891b0c41c3ad9ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3035660108728386360
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -154,9 +166,9 @@ MonoBehaviour:
   output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4426769022946699038}
-        m_MethodName: LoadScene
-        m_Mode: 5
+      - m_Target: {fileID: 3035660108728386360}
+        m_MethodName: OnEnterDoor
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -178,15 +190,33 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   forbidRepeatingInteraction: 0
---- !u!114 &4426769022946699038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4426769022946699039}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d1743496a675364a891b0c41c3ad9ac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  interactKey: 119
+  sceneName: Test1
+  onEnterDoor:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6129196759991534422, guid: d7b1e42e02937bd498490c71fd81741d,
+          type: 3}
+        m_MethodName: SetBeforeSceneName
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4426769022946699038}
+        m_MethodName: LoadScene
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: StringEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  littleGirlPosition: {fileID: 0}

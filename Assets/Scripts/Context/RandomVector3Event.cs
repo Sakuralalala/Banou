@@ -25,7 +25,7 @@ public class RandomVector3Event : MonoBehaviour
     {
         max = value;
     }
-    private void OnDrawGizmosSelected()
+    private void OnDrawGizmos()
     {
         Gizmos.color = Color.yellow;
 

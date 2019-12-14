@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -319,7 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f1831814f9016ff49abdaa40ac85e63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beforeSceneName: 
 --- !u!1001 &635803111
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -715,12 +714,12 @@ PrefabInstance:
     - target: {fileID: 4426769022946699027, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 6.1
+      value: 6.5
       objectReference: {fileID: 0}
     - target: {fileID: 4426769022946699027, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.28
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4426769022946699027, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
@@ -824,7 +823,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 866777325, guid: a1d508720209a8045aa1298534750db4, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d508720209a8045aa1298534750db4, type: 3}
