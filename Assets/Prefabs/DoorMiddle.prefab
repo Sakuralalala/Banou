@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: -3091263883638907060}
   m_Layer: 0
   m_Name: DoorMiddle
-  m_TagString: Untagged
+  m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -223,7 +223,7 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
   forbidRepeatingInteraction: 0
   interactKey: 119
-  sceneName: Test2
+  sceneName: Room 17
   onEnterDoor:
     m_PersistentCalls:
       m_Calls:

@@ -29,8 +29,8 @@ namespace GameSystem
         private static bool IsMeetEnemy()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            //Debug.Log(currentSceneName);
-            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length-1));
+            Debug.Log(currentSceneName.Length);
+            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length));
             
 
             if(index == roomIndex)

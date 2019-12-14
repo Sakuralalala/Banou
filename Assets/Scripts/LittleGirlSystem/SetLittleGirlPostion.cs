@@ -27,9 +27,9 @@ public class SetLittleGirlPostion : MonoBehaviour
             
             if (door.GetComponent<Door>().sceneName == beforeSceneName)
             {
-                //this.gameObject.transform.position = door.transform.position;
+                
                 this.gameObject.transform.position = door.transform.GetChild(1).position;
-                //Debug.Log(door.transform.GetChild(1).position);
+                
                 
             }
         }
