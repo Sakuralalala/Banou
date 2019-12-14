@@ -9,6 +9,9 @@ namespace GameSystem
         public class StressSystemSetting : ScriptableObject
         {
             public float maxStress;
+
+            public float heartLevel2 = 0.4f;
+            public float heartLevel3 = 0.8f;
         }
     }
 }
