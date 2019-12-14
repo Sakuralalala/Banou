@@ -20,7 +20,7 @@ public class SmartCameraRecorder : MonoBehaviour
         float height = -transform.position.z * Mathf.Tan(theta);
         float width = height * Camera.current.aspect;
 
-        Gizmos.DrawWireSphere((Vector3)((Vector2)transform.position + offset), 0.6f);
+        Gizmos.DrawWireSphere((Vector3)((Vector2)transform.position + offset), 0.25f);
 
         Gizmos.DrawLine(new Vector3(transform.position.x - width, transform.position.y + height), new Vector3(transform.position.x + width, transform.position.y + height));
         Gizmos.DrawLine(new Vector3(transform.position.x - width, transform.position.y + height), new Vector3(transform.position.x - width, transform.position.y - height));

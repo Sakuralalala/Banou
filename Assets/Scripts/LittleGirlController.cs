@@ -4,14 +4,19 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class LittleGirlController : MonoBehaviour
 {
+    //Reference
     public GameSystem.PresentSetting.LittleGirlSystemSetting setting { get => GameSystem.LittleGirlSystem.Setting; }
+    private Rigidbody2D rid2d;
+    public Vector3 referencePos { get => transform.position + centerOffset; }   //参考中心点
+
+    //Events
     public FloatEvent onSpeedChage;
     public FloatEvent onMove;
 
-    private Rigidbody2D rid2d;
-
+    //Properties
     [HideInInspector]
     public float speed;
+    public Vector3 centerOffset = Vector3.up * 0.75f;
 
     private void Move()
     {
@@ -30,5 +35,10 @@ public class LittleGirlController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.DrawWireSphere(referencePos, 0.25f);
     }
 }

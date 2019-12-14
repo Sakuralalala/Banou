@@ -27,7 +27,7 @@ public class SmartCamera : MonoBehaviour
         }
     }
 
-    private Vector2 GirlPos { get => GameSystem.LittleGirlSystem.theGirl.transform.position; }
+    private Vector2 GirlPos { get => GameSystem.LittleGirlSystem.theGirl.referencePos; }
 
     public static List<SmartCameraPoint> cameraPoints = new List<SmartCameraPoint>();
 
