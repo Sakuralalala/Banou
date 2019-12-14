@@ -13,12 +13,12 @@ public class CurveFloatEvent : MonoBehaviour
     [ContextMenu("Invoke")]
     public void Invoke()
     {
-        Invoke(time);
-    }
-    public void Invoke(float time)
-    {
         StopAllCoroutines();
         StartCoroutine(invoke(time));
+    }
+    public void Invoke(float t)
+    {
+        output?.Invoke(curve.Evaluate(t));
     }
     private IEnumerator invoke(float time)
     {
