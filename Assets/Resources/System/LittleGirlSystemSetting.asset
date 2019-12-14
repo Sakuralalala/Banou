@@ -12,4 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a272669beaf834bb0e92a19deebb4f, type: 3}
   m_Name: LittleGirlSystemSetting
   m_EditorClassIdentifier: 
-  maxSpeed: 1
+  maxSpeed: 0.55
+  menuKey: 32
+  tortureKey: 101
