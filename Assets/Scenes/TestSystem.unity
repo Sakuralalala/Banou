@@ -189,83 +189,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abb7b64efb5b6d84aa72e17da1c1ad42, type: 3}
---- !u!1 &627021592
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 627021593}
-  - component: {fileID: 627021595}
-  - component: {fileID: 627021594}
-  m_Layer: 0
-  m_Name: Cube
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &627021593
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627021592}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.44, z: 0}
-  m_LocalScale: {x: 1, y: 2.925, z: 1}
-  m_Children: []
-  m_Father: {fileID: 767591893}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &627021594
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627021592}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 5336785430d18f84cbecb6c5a9de66e7, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!33 &627021595
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 627021592}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &651703474
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -333,29 +256,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4426769022946699024, guid: a1d508720209a8045aa1298534750db4,
+    - target: {fileID: 4426769022946699025, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
-      propertyPath: m_Offset.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4426769022946699024, guid: a1d508720209a8045aa1298534750db4,
+      propertyPath: output.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 929689149}
+    - target: {fileID: 4426769022946699025, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
-      propertyPath: m_Offset.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4426769022946699024, guid: a1d508720209a8045aa1298534750db4,
-        type: 3}
-      propertyPath: m_Size.y
-      value: 2
-      objectReference: {fileID: 0}
+      propertyPath: onEnterDoor.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 929689149}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d508720209a8045aa1298534750db4, type: 3}
---- !u!4 &767591893 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4426769022817493339, guid: a1d508720209a8045aa1298534750db4,
-    type: 3}
-  m_PrefabInstance: {fileID: 651703474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &929689148
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,9 +277,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929689152}
-  - component: {fileID: 929689150}
   - component: {fileID: 929689149}
-  - component: {fileID: 929689151}
   m_Layer: 0
   m_Name: TestObject
   m_TagString: Untagged
@@ -384,70 +294,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 929689148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 17ff8d00b6a554d43a7e6d473b7a82de, type: 3}
+  m_Script: {fileID: 11500000, guid: f1831814f9016ff49abdaa40ac85e63b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 929689150}
-        m_MethodName: TextPopUpToScreenSpace
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Vec2Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  input: {x: 1, y: 1}
-  invokeOnStart: 1
-  invokeOnEnable: 0
---- !u!114 &929689150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929689148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 25cf33e850864b44bb36d46140caba95, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 
---- !u!114 &929689151
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 929689148}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 40eeac70f07744e4895e4ee9f73d3eec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  output:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 929689150}
-        m_MethodName: TextPopUpToWorldSpace
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: Vec3Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
-  invokeOnStart: 0
-  invokeOnEnable: 0
-  input: {x: 1, y: 1, z: -10}
+  beforeSceneName: 
 --- !u!4 &929689152
 Transform:
   m_ObjectHideFlags: 0

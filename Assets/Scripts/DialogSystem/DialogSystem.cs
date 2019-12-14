@@ -21,7 +21,7 @@ namespace GameSystem
             textObject.transform.position = new Vector2(x, y);
             textObject.transform.SetParent(camera.transform);
             textObject.GetComponent<TextMesh>().text = text;
-            Debug.Log(new Vector2(x, y));
+            //Debug.Log(new Vector2(x, y));
         }
 
         //输出到世界空间
@@ -30,7 +30,7 @@ namespace GameSystem
             GameObject textObject = GameObject.Instantiate(Setting.textPrefab);
             textObject.transform.position = worldPosition;
             textObject.GetComponent<TextMesh>().text = text;
-            Debug.Log(worldPosition);
+            //Debug.Log(worldPosition);
         }
 
     }
