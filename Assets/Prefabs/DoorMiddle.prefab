@@ -121,6 +121,7 @@ GameObject:
   - component: {fileID: 4426769022946699024}
   - component: {fileID: 4426769022946699038}
   - component: {fileID: -3091263883638907060}
+  - component: {fileID: 5867558764140089641}
   m_Layer: 0
   m_Name: DoorMiddle
   m_TagString: Door
@@ -252,6 +253,24 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: StringEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
   littleGirlPosition: {fileID: 0}
+--- !u!114 &5867558764140089641
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4426769022946699039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8320177a541f073438b6a24dc0364521, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  output:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  invokeOnStart: 0
 --- !u!1 &8199163435230168386
 GameObject:
   m_ObjectHideFlags: 0
