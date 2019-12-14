@@ -16,7 +16,7 @@ namespace GameSystem
         /// <summary>
         /// 游戏初始化委托，在游戏开始时和游戏重新开始时调用
         /// </summary>
-        public System.Action onGameInitialize;
+        public static System.Action onGameInitialize;
 
         //流程--------------------------------
         private IEnumerator _Start()

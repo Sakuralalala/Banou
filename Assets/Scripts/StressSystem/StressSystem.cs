@@ -13,5 +13,15 @@ namespace GameSystem
       
         public static Action<float> onStressChange;
 
+
+        [RuntimeInitializeOnLoadMethod]
+        private static void RegisterInit()
+        {
+            GameSystem.TheMatrix.onGameInitialize += Init;
+        }
+        private static void Init()
+        {
+            //Init here
+        }
     }
 }
