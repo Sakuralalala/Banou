@@ -15,6 +15,8 @@ namespace GameSystem
             public bool[] roomIsLight;
             //最大敌人激怒等级
             public int maxLevel;
+            //最大倒计时时间
+            public float maxStepTime;
             //体型增大系数
             public float scaleValue;
             //倒计时减少系数

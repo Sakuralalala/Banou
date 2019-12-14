@@ -56,6 +56,7 @@ namespace GameSystem
         {
             if (IsMeetEnemy())
             {
+                Debug.Log("与敌人在同一个场景中");
                 if(level < Setting.maxLevel)
                 {
                     level++;
@@ -63,6 +64,7 @@ namespace GameSystem
                     //模型变大
                     enemy.transform.localScale = scale * new Vector3(1, 1, 1);
                     timeRamined -= timeRamined * Setting.stepTimeValue;
+                    Debug.Log(level);
                 }
             }
             
