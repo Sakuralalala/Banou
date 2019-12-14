@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystem.PresentSetting;
+using System;
 
 namespace GameSystem
 {
@@ -9,8 +10,8 @@ namespace GameSystem
     {
         public static float stress { get; set; }
 
-        public static FloatDelegate onStressChange;
-
+        //public static FloatDelegate onStressChange;
+        public static Action<float> onStressChange;
 
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystem.PresentSetting;
+using System;
 
 namespace GameSystem
 {
@@ -9,7 +10,7 @@ namespace GameSystem
     {
         public static float dollHealth { get; set; }
 
-        public static FloatDelegate onDollHeathChange;
+        public static Action<float> onDollHeathChange;
     }
 }
 

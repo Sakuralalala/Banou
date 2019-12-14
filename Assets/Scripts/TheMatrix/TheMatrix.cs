@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Events;
+using System;
 
 namespace GameSystem
 {
@@ -367,4 +368,4 @@ public class Vec3Event : UnityEvent<Vector3> { }
 [System.Serializable]
 public class StringEvent : UnityEvent<string> { }
 
-public delegate void FloatDelegate(float input);
+
