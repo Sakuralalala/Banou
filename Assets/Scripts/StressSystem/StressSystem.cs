@@ -20,6 +20,10 @@ namespace GameSystem
                 {
                     stress = Setting.maxStress;
                 }
+                if (stress < 0)
+                {
+                    stress = 0;
+                }
                 onStressChange?.Invoke(deltaStress);
             }
         }

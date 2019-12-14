@@ -2,12 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystem;
+using UnityEngine.UI;
 
 public class DollSystemAgent : MonoBehaviour
 {
-    public void DollHealthChange(float value)
+    public UnityEngine.Events.UnityEvent onTorture;
+
+    private void Start()
     {
-        DollSystem.dollHealth -= value;
-        DollSystem.onDollHeathChange?.Invoke(value);
+        GetComponent<Image>().overrideSprite = DollSystem.Setting.dollPics[DollSystem.dollHealth];
+    }
+
+    public void TortureDoll()
+    {
+        DollSystem.dollHealth--;
+        if (DollSystem.dollHealth < 0) TheMatrix.SendGameMessage(GameMessage.GameOver);
+        else
+        {
+            GetComponent<Image>().overrideSprite = DollSystem.Setting.dollPics[DollSystem.dollHealth];
+            onTorture?.Invoke();
+        }
     }
 }

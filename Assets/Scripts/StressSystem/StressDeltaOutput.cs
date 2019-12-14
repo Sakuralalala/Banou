@@ -6,10 +6,11 @@ public class StressDeltaOutput : StressEffect
 {
     public float threadhold;
     public FloatEvent output;
+    public bool inverse = false;
 
     public override void OnStressChange(float deltaStress)
     {
-        if (deltaStress > threadhold) output?.Invoke(deltaStress);
+        if (inverse == deltaStress < threadhold) output?.Invoke(deltaStress);
     }
 
 }

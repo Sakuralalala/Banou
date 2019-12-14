@@ -9,7 +9,9 @@ namespace GameSystem
         [CreateAssetMenu(fileName = "DollSystemSetting", menuName = "系统配置文件/Doll System Setting")]
         public class DollSystemSetting : ScriptableObject
         {
-            public float dollHealth;
+            public int dollMaxHealth;
+            public Sprite[] dollPics;
+            public GameObject bloodPrefab;
         }
     }
 }

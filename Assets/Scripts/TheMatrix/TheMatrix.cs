@@ -33,7 +33,46 @@ namespace GameSystem
 
             onGameInitialize?.Invoke();
 
-            //显示Logo
+            ResetGameMessage();
+            while (true)
+            {
+                yield return 0;
+                if (GetGameMessage(GameMessage.Next)) break;
+                if (GetGameMessage(GameMessage.Exit))
+                {
+                    Application.Quit();
+                }
+            }
+
+            StartCoroutine(_InGame());
+        }
+
+        public string _inGame;
+        private IEnumerator _InGame()
+        {
+            SceneManager.LoadScene(_inGame);
+
+            ResetGameMessage();
+            while (true)
+            {
+                yield return 0;
+                if (GetGameMessage(GameMessage.GameOver))
+                {
+                    StartCoroutine(_GameOver());
+                    yield break;
+                }
+                if (GetGameMessage(GameMessage.Exit))
+                {
+                    Application.Quit();
+                }
+            }
+        }
+
+        public string _gameOver;
+        private IEnumerator _GameOver()
+        {
+            SceneManager.LoadScene(_gameOver);
+
             ResetGameMessage();
             while (true)
             {
@@ -41,7 +80,7 @@ namespace GameSystem
                 if (GetGameMessage(GameMessage.Next)) break;
             }
 
-            //进入下一个场景
+            StartCoroutine(_StartScene());
         }
 
         ////场景名字记为_name
@@ -353,7 +392,8 @@ namespace GameSystem
         LogoFinished,   //开始的Logo放出来了
         Next,
         Return,
-        Exit
+        Exit,
+        GameOver
     }
 }
 

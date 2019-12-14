@@ -8,10 +8,7 @@ namespace GameSystem
 {
     public class DollSystem : SubSystem<DollSystemSetting>
     {
-        public static float dollHealth { get; set; }
-
-        public static Action<float> onDollHeathChange;
-
+        public static int dollHealth = 3;
 
         [RuntimeInitializeOnLoadMethod]
         private static void RegisterInit()
@@ -20,7 +17,7 @@ namespace GameSystem
         }
         private static void Init()
         {
-            //Init here
+            dollHealth = Setting.dollMaxHealth;
         }
     }
 }

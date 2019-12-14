@@ -16,4 +16,10 @@ public class KeyCodeInputEvent : MonoBehaviour
         if (Input.GetKeyUp(input)) upOutput?.Invoke();
     }
 
+    public void ForceRelease()
+    {
+        upOutput?.Invoke();
+        enabled = false;
+    }
+
 }
