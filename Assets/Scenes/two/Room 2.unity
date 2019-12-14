@@ -190,7 +190,12 @@ PrefabInstance:
     - target: {fileID: 1242044099722941266, guid: a1d508720209a8045aa1298534750db4,
         type: 3}
       propertyPath: sceneName
-      value: Room 10
+      value: Room 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1242044099722941266, guid: a1d508720209a8045aa1298534750db4,
+        type: 3}
+      propertyPath: interactKey
+      value: 97
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1d508720209a8045aa1298534750db4, type: 3}
@@ -863,7 +868,7 @@ PrefabInstance:
     - target: {fileID: 5292308298726965766, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3
+      value: -2
       objectReference: {fileID: 0}
     - target: {fileID: 5292308298726965766, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
@@ -918,12 +923,37 @@ PrefabInstance:
     - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: dialogUnits.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: dialogUnits.Array.data[0].text
-      value: "\u8FD9\u5F88\u597D\u7528\u7684\uFF0C\u9001\u7ED9\u4F60\u597D\u4E86"
+      value: "\u62FF\u53BB\uFF0C\u7ED9\u4F60"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[1].text
+      value: "\u6211\u4E0D\u8981\u4E86"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[1].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[2].text
+      value: "\u8FD9\u53EF\u662F\u6211\u73CD\u85CF\u7684\uFF01"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[2].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[0].delay
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 958e5ac27ce214a4486a5df3f9ad6e5d, type: 3}
@@ -993,6 +1023,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223362891405099270, guid: 3255171526206cd4c97c0a0f0400faf4,
+        type: 3}
+      propertyPath: sceneName
+      value: Room 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5223362891405099270, guid: 3255171526206cd4c97c0a0f0400faf4,
+        type: 3}
+      propertyPath: interactKey
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3255171526206cd4c97c0a0f0400faf4, type: 3}

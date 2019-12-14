@@ -1064,16 +1064,36 @@ PrefabInstance:
     - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: dialogUnits.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: dialogUnits.Array.data[0].text
-      value: "\u6765\uFF0C\u591A\u559D\u70B9\u6C34\uFF0C\u6C34\u8981\u559D\u5F97\u9971\u9971\u7684\u624D\u80FD\u5FEB\u5FEB\u957F\u5927\u54E6~"
+      value: "\u6765\uFF0C\u591A\u559D\u70B9\u6C34~"
       objectReference: {fileID: 0}
     - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
         type: 3}
       propertyPath: dialogUnits.Array.data[0].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[1].text
+      value: "\u6C34\u8981\u559D\u5F97\u9971\u9971\u7684~"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[1].delay
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[2].text
+      value: "\u5FEB\u5FEB\u957F\u5927\u54E6~"
+      objectReference: {fileID: 0}
+    - target: {fileID: 5292308298726965770, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
+        type: 3}
+      propertyPath: dialogUnits.Array.data[2].delay
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5292308298726965767, guid: 958e5ac27ce214a4486a5df3f9ad6e5d,
