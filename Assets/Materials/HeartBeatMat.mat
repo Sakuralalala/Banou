@@ -81,12 +81,12 @@ Material:
     - _Metallic: 0
     - _OcclusionStrength: 1
     - _QueueOffset: 0
-    - _Range: 0.10983795
+    - _Range: 0.0000000056922898
     - _ReceiveShadows: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.5
+    - _Speed: 0.32
     - _SrcBlend: 1
     - _Surface: 0
     - _WorkflowMode: 1
