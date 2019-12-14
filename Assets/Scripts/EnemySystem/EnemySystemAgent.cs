@@ -11,7 +11,7 @@ public class EnemySystemAgent : MonoBehaviour
     public void StartTestEnemySystem()
     {
         EnemySystem.timeRamined = EnemySystem.Setting.maxStepTime;
-        EnemySystem.LevelChange();
+        //EnemySystem.LevelChange();
         if (isOver)
             EnemySystem.StartEnemyActionCoroutine();
         else

@@ -18,9 +18,9 @@ public class SetLittleGirlPostion : MonoBehaviour
     {
         
        
-        //StartCoroutine(EnemySystem.EnemyAction());
+        
         //每进入新的场景时，判断一下是否和敌人在一个场景
-        //EnemySystem.LevelChange();
+        EnemySystem.LevelChange();
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
         foreach(GameObject door in doors)
         {
