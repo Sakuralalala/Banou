@@ -7,7 +7,7 @@ public class StressSystemAgent : MonoBehaviour
 {
     public void StressChange(float deltaStress)
     {
-        StressSystem.stress += deltaStress;
+        StressSystem.Stress += deltaStress;
         StressSystem.onStressChange?.Invoke(deltaStress);
     }
 }

@@ -8,9 +8,19 @@ namespace GameSystem
 {
     public class StressSystem : SubSystem<StressSystemSetting>
     {
-        public static float stress { get; set; }
+        private static float stress;
+        public static float Stress
+        {
+            get => stress;
+            set
+            {
+                float deltaStress = value - stress;
+                stress = value;
+                onStressChange?.Invoke(deltaStress);
+            }
+        }
 
-      
+
         public static Action<float> onStressChange;
 
 

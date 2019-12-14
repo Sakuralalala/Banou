@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 344f41fac3ec27245bfb718d2232df77, type: 3}
   m_Name: StressSystemSetting
   m_EditorClassIdentifier: 
-  maxStress: 0
+  maxStress: 100
