@@ -369,4 +369,6 @@ public class Vec3Event : UnityEvent<Vector3> { }
 public class StringEvent : UnityEvent<string> { }
 [System.Serializable]
 public class ColorEvent : UnityEvent<Color> { }
+[System.Serializable]
+public class BoolEvent : UnityEvent<bool> { }
 

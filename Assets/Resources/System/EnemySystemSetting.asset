@@ -12,15 +12,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfda25bc96df2fe41a45b27d368cc164, type: 3}
   m_Name: EnemySystemSetting
   m_EditorClassIdentifier: 
-  maxRoom: 0
-  roomIsLight: 
-  maxLevel: 0
-  scaleValue: 0
-  stepTimeValue: 0
-  enemyPrefab: {fileID: 0}
-  xPointMin: 0
-  xPointMax: 0
+  maxRoom: 5
+  roomIsLight: 0000000000
+  maxLevel: 3
+  maxStepTime: 5
+  scaleValue: 1
+  stepTimeValue: 1
+  enemyPrefab: {fileID: 4152517407060546803, guid: 351ecdb2d11ddd34e94ab407d11f42f5,
+    type: 3}
+  xPointMin: -4
+  xPointMax: 4
   yPoint: 0
   yTextPoint: 0
   xTextPoint: 0
-  texts: []
+  texts:
+  - 111
+  - 222
+  - 333

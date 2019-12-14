@@ -22,13 +22,16 @@ namespace GameSystem
         //敌人在房间停留时间
         public static float timeRamined { get; set; }
 
+        public static bool isGameOver;
        
         //判断是否与敌人在同一场景
         //生成怪物，怪物文本
         private static bool IsMeetEnemy()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length));
+            //Debug.Log(currentSceneName);
+            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length-1));
+            
 
             if(index == roomIndex)
             {
@@ -78,45 +81,60 @@ namespace GameSystem
             return roomIsLight[index];
         }
 
+        public static void StartEnemyActionCoroutine()
+        {
+            StartCoroutine(EnemyAction());
+        }
+
+        public static void StopEnemyActionCoroutine()
+        {
+            //...
+            StopAllCoroutines();
+        }
+
         //敌人状态
         public static IEnumerator EnemyAction()
         {
-
-            if (level < Setting.maxLevel)
+            while (true)
             {
-                //未被激怒状态
-                roomIndex = Random.Range(0, Setting.maxRoom);
-                string sceneNameCurrent = SceneManager.GetActiveScene().name;
-                while (("Room_" + roomIndex.ToString()) == sceneNameCurrent)
+                //Debug.Log("怪物开始找房间");
+                if (level < Setting.maxLevel)
                 {
+                    //未被激怒状态
                     roomIndex = Random.Range(0, Setting.maxRoom);
+                    string sceneNameCurrent = SceneManager.GetActiveScene().name;
+                    while (("Room " + roomIndex.ToString()) == sceneNameCurrent)
+                    {
+                        roomIndex = Random.Range(0, Setting.maxRoom);
+                        yield return 0;
+                    }
+
+                }
+                else
+                {
+                    //激怒状态
+                    string sceneNameCurrent = SceneManager.GetActiveScene().name;
+                    GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
+                    foreach (GameObject door in doors)
+                    {
+                        if (door.GetComponent<Door>().sceneName == sceneNameCurrent)
+                        {
+                            yield return 0;
+                        }
+                    }
+                    roomIndex = Random.Range(0, doors.Length);
                     yield return 0;
                 }
 
-            }
-            else
-            {
-                //激怒状态
-                string sceneNameCurrent = SceneManager.GetActiveScene().name;
-                GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-                foreach (GameObject door in doors)
-                {
-                    if (door.GetComponent<Door>().sceneName == sceneNameCurrent)
-                    {
-                        yield return 0;
-                    }
-                }
-                roomIndex = Random.Range(0, doors.Length);
-                yield return 0;
+               // Debug.Log("怪物出现在Room "+roomIndex);
+                //Debug.Log("倒计时时间为"+timeRamined);
+                //倒计时,重新选房间
+                yield return new WaitForSeconds(timeRamined);
+
+                //倒计时结束
+                //Debug.Log("倒计时结束");
             }
             
-
-
-            //倒计时,重新选房间
-            yield return new WaitForSeconds(timeRamined);
-
-            //倒计时结束
-            yield return 0;
         }
 
 
@@ -131,6 +149,7 @@ namespace GameSystem
         private static void Init()
         {
             //Init here
+            timeRamined = Setting.maxStepTime;
         }
 
     }

@@ -16,7 +16,9 @@ public class SetLittleGirlPostion : MonoBehaviour
 
     public void SetPostion()
     {
-        Debug.Log("true");
+        
+       
+        //StartCoroutine(EnemySystem.EnemyAction());
         //每进入新的场景时，判断一下是否和敌人在一个场景
         //EnemySystem.LevelChange();
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
@@ -32,6 +34,9 @@ public class SetLittleGirlPostion : MonoBehaviour
             }
         }
     }
+
+   
+
     private void Start()
     {
         SetPostion();
