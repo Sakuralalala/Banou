@@ -11,5 +11,15 @@ namespace GameSystem
     /// </summary>
     public class EffectSystem : SubSystem<EffectSystemSetting>
     {
+
+        [RuntimeInitializeOnLoadMethod]
+        private static void RegisterInit()
+        {
+            GameSystem.TheMatrix.onGameInitialize += Init;
+        }
+        private static void Init()
+        {
+            //Init here
+        }
     }
 }

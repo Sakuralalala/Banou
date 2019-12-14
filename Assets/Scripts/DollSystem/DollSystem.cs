@@ -11,6 +11,17 @@ namespace GameSystem
         public static float dollHealth { get; set; }
 
         public static Action<float> onDollHeathChange;
+
+
+        [RuntimeInitializeOnLoadMethod]
+        private static void RegisterInit()
+        {
+            GameSystem.TheMatrix.onGameInitialize += Init;
+        }
+        private static void Init()
+        {
+            //Init here
+        }
     }
 }
 
