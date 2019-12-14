@@ -7,6 +7,7 @@ public class LittleGirlController : MonoBehaviour
     //Reference
     public GameSystem.PresentSetting.LittleGirlSystemSetting setting { get => GameSystem.LittleGirlSystem.Setting; }
     private Rigidbody2D rid2d;
+    private Animator animator;
     public Vector3 referencePos { get => transform.position + centerOffset; }   //参考中心点
 
     //Events
@@ -30,6 +31,7 @@ public class LittleGirlController : MonoBehaviour
     private void Awake()
     {
         rid2d = GetComponent<Rigidbody2D>();
+        animator = GetComponentInChildren<Animator>();
         GameSystem.LittleGirlSystem.theGirl = this;
         
     }
@@ -37,10 +39,26 @@ public class LittleGirlController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
+        AnimationControll();
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(referencePos, 0.25f);
+    }
+
+    //动画控制
+    public void AnimationControll()
+    {
+        animator.SetFloat("Speed", speed);
+        if (speed > 0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = true;
+        }
+        else if(speed <0)
+        {
+            GetComponentInChildren<SpriteRenderer>().flipX = false;
+        }
+
     }
 }
