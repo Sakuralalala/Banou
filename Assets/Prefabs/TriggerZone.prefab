@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 5292308298726965764}
   - component: {fileID: 5292308298726965771}
   - component: {fileID: 5292308298726965767}
-  - component: {fileID: 5979223889933255291}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -49,7 +48,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 1, y: 1}
+  m_Offset: {x: 0, y: 1.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -60,7 +59,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.5, y: 3}
+  m_Size: {x: 3, y: 2.5}
   m_EdgeRadius: 0
 --- !u!114 &5292308298726965770
 MonoBehaviour:
@@ -96,17 +95,6 @@ MonoBehaviour:
       - m_Target: {fileID: 5292308298726965767}
         m_MethodName: Invoke
         m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 5979223889933255291}
-        m_MethodName: PrintString
-        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -195,6 +183,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: 
+  color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!114 &5292308298726965767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,8 +196,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b16afe7067aa894b888d09a64e572df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  min: {x: -0.41, y: 0, z: 0}
-  max: {x: 2.29, y: 2.52, z: 0.29}
+  min: {x: -1.5, y: 0, z: 0}
+  max: {x: 1.5, y: 2.5, z: 0.1}
   relative: 1
   output:
     m_PersistentCalls:
@@ -225,16 +214,3 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: Vec3Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
---- !u!114 &5979223889933255291
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5292308298726965769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2cb7b49ed3134e04cb89fc1baf6a503e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: 

@@ -6,6 +6,7 @@ using GameSystem;
 public class DialogSystemAgent : MonoBehaviour
 {
     public string text;
+    public Color color = Color.white;
     public void SetText(string text)
     {
         this.text = text;
@@ -13,12 +14,12 @@ public class DialogSystemAgent : MonoBehaviour
 
     public void TextPopUpToWorldSpace(Vector3 worldPostion)
     {
-        DialogSystem.OutputToWorldSpace(worldPostion, text);
+        DialogSystem.OutputToWorldSpace(worldPostion, text, color);
 
     }
     public void TextPopUpToScreenSpace(Vector2 screenPostion)
     {
-        DialogSystem.OutputToScreenSpace(screenPostion, text);
+        DialogSystem.OutputToScreenSpace(screenPostion, text, color);
 
     }
 }

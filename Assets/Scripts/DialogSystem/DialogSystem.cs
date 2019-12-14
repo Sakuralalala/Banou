@@ -11,7 +11,7 @@ namespace GameSystem
         public static Camera camera;
 
         //输出到屏幕空间
-        public static void OutputToScreenSpace(Vector2 screenPosition, string text)
+        public static void OutputToScreenSpace(Vector2 screenPosition, string text, Color color)
         {
             camera = Camera.main;
             float t = Mathf.Tan(camera.fieldOfView / 2);
@@ -21,16 +21,21 @@ namespace GameSystem
             textObject.transform.position = new Vector2(x, y);
             textObject.transform.SetParent(camera.transform);
             textObject.GetComponent<TextMesh>().text = text;
-            //Debug.Log(new Vector2(x, y));
+            textObject.GetComponent<ColorLerpEvent>().max = color;
         }
 
         //输出到世界空间
         public static void OutputToWorldSpace(Vector3 worldPosition, string text)
         {
+            OutputToWorldSpace(worldPosition, text, Color.white);
+        }
+        //输出到世界空间
+        public static void OutputToWorldSpace(Vector3 worldPosition, string text, Color color)
+        {
             GameObject textObject = GameObject.Instantiate(Setting.textPrefab);
             textObject.transform.position = worldPosition;
             textObject.GetComponent<TextMesh>().text = text;
-            //Debug.Log(worldPosition);
+            textObject.GetComponent<ColorLerpEvent>().max = color;
         }
 
     }
