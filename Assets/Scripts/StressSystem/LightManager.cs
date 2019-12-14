@@ -9,7 +9,13 @@ public class LightManager : StressEffect
     private void Start()
     {
         lightControllers = FindObjectsOfType<LightController>() as LightController[];
+
         //TODO 打乱顺序
+
+        foreach (LightController lc in lightControllers)
+        {
+            lc.GetComponentInChildren<ParticleSystem>()?.collision.SetPlane(0, transform);
+        }
         OnStressChange(GameSystem.StressSystem.Stress);
     }
 

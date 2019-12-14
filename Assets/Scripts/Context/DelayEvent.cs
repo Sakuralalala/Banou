@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[AddComponentMenu("Context/CurveFloatEvent")]
+[AddComponentMenu("Context/DelayEvent")]
 public class DelayEvent : MonoBehaviour
 {
     public UnityEvent output;
