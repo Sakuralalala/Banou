@@ -31,10 +31,7 @@ namespace GameSystem
             textPrefab.transform.position = worldPosition;
             Debug.Log(worldPosition);
         }
-        public static void SetText(string text)
-        {
-            textPrefab.GetComponent<Text>().text = text;
-        }
+       
     }
 }
 
