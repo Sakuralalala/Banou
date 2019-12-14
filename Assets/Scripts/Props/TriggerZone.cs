@@ -54,7 +54,7 @@ public class TriggerZone : MonoBehaviour
     private void DoTrigger()
     {
         if ((string.IsNullOrEmpty(requiredKeyword) || triggerdKeywords.Contains(requiredKeyword))
-            && string.IsNullOrEmpty(disableKeyword) || !triggerdKeywords.Contains(requiredKeyword))
+            && (string.IsNullOrEmpty(disableKeyword) || !triggerdKeywords.Contains(requiredKeyword)))
         {
             onEnter?.Invoke();
             if (!string.IsNullOrEmpty(triggeredKeyword) && !triggerdKeywords.Contains(triggeredKeyword))
