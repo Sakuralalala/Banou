@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5292308298726965764}
   - component: {fileID: 5292308298726965771}
   - component: {fileID: 5292308298726965767}
+  - component: {fileID: 5979223889933255291}
   m_Layer: 0
   m_Name: TriggerZone
   m_TagString: Untagged
@@ -95,6 +96,17 @@ MonoBehaviour:
       - m_Target: {fileID: 5292308298726965767}
         m_MethodName: Invoke
         m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5979223889933255291}
+        m_MethodName: PrintString
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -213,3 +225,16 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
     m_TypeName: Vec3Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+--- !u!114 &5979223889933255291
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5292308298726965769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2cb7b49ed3134e04cb89fc1baf6a503e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: 
