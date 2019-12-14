@@ -4,67 +4,30 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class LittleGirlController : MonoBehaviour
 {
-    [System.Serializable]
-    public class Setting
-    {
-        public float maxSpeed;
-        
-        
-        
-    }
-    public Setting setting;
+    public GameSystem.PresentSetting.LittleGirlSystemSetting setting { get => GameSystem.LittleGirlSystem.Setting; }
     public FloatEvent onSpeedChage;
     public FloatEvent onMove;
 
-    private Rigidbody2D rigidbody2D;
-    
-    public  float speed;
+    private Rigidbody2D rid2d;
+
+    [HideInInspector]
+    public float speed;
 
     private void Move()
     {
         float h = Input.GetAxis("Horizontal");
-        //if(h != 0)
-        //{
-        //    if (h > 0)
-        //    {
-        //        speed += setting.addSpeed;
-        //        if (speed >= setting.maxSpeed)
-        //            speed = setting.maxSpeed;
-        //    }
-        //    else if(h < 0)
-        //    {
-        //        speed -= setting.addSpeed;
-        //        if (speed <= setting.minSpeed)
-        //            speed = setting.minSpeed;
-        //    } 
-        //}
-        //else
-        //{
-        //    if(speed > 0.001)
-        //    {
-        //        speed -= setting.subSpeed;
-        //    }
-        //    else if(speed < -0.001)
-        //    {
-        //        speed += setting.subSpeed;
-        //    }
-        //    else
-        //    {
-        //        speed = 0;
-        //    }
-        //    speed -= h*
-        //}
         speed = h * setting.maxSpeed;
-        rigidbody2D.velocity = new Vector2(speed, 0);
+        rid2d.velocity = new Vector2(speed, 0);
     }
 
 
-    private void Start()
+    private void Awake()
     {
-        rigidbody2D = GetComponent<Rigidbody2D>();
+        rid2d = GetComponent<Rigidbody2D>();
+        GameSystem.LittleGirlSystem.theGirl = this;
     }
-    // Update is called once per frame
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         Move();
     }
