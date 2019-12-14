@@ -11,12 +11,16 @@ public class TriggerZone : MonoBehaviour
     public bool triggerOnlyOnce = false; //只触发一次
     public UnityEvent onEnter;
     public UnityEvent onExit;
+    public string triggeredKeyword;
+    public string requiredKeyword;
+    public string disableKeyword;
 
     private string GetID()
     {
         return UnityEngine.SceneManagement.SceneManager.GetActiveScene().name + transform.GetSiblingIndex();
     }
     private static List<string> triggerdZones = new List<string>();
+    private static List<string> triggerdKeywords = new List<string>();
     [RuntimeInitializeOnLoadMethod]
     private static void RegisterInit()
     {
@@ -25,6 +29,7 @@ public class TriggerZone : MonoBehaviour
     private static void Init()
     {
         triggerdZones.Clear();
+        triggerdKeywords.Clear();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -32,17 +37,29 @@ public class TriggerZone : MonoBehaviour
         if (!enabled) return;
         if (collision.CompareTag("Player"))
         {
-            if (triggerOnlyOnce )
+            if (triggerOnlyOnce)
             {
                 if (!triggerdZones.Contains(GetID()))
                 {
-                    onEnter?.Invoke();
+                    DoTrigger();
                     triggerdZones.Add(GetID());
                 }
             }
             else
             {
-                onEnter?.Invoke();
+                DoTrigger();
+            }
+        }
+    }
+    private void DoTrigger()
+    {
+        if ((string.IsNullOrEmpty(requiredKeyword) || triggerdKeywords.Contains(requiredKeyword))
+            && string.IsNullOrEmpty(disableKeyword) || !triggerdKeywords.Contains(requiredKeyword))
+        {
+            onEnter?.Invoke();
+            if (!string.IsNullOrEmpty(triggeredKeyword) && !triggerdKeywords.Contains(triggeredKeyword))
+            {
+                triggerdKeywords.Add(triggeredKeyword);
             }
         }
     }
