@@ -16,6 +16,10 @@ namespace GameSystem
             {
                 float deltaStress = value - stress;
                 stress = value;
+                if (stress > Setting.maxStress)
+                {
+                    stress = Setting.maxStress;
+                }
                 onStressChange?.Invoke(deltaStress);
             }
         }

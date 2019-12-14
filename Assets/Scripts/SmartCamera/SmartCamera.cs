@@ -31,9 +31,9 @@ public class SmartCamera : MonoBehaviour
 
     public static List<SmartCameraPoint> cameraPoints = new List<SmartCameraPoint>();
 
-    private void React(Vector3 direction)
+    public void React(Vector3 direction)
     {
-        transform.Translate((direction + Vector3.back) * GameSystem.EffectSystem.Setting.reactDistance);
+        transform.Translate(direction * GameSystem.EffectSystem.Setting.reactDistance);
     }
 
 
