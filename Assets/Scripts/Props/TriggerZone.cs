@@ -8,9 +8,9 @@ using UnityEngine.Events;
 /// </summary>
 public class TriggerZone : MonoBehaviour
 {
+    public bool triggerOnlyOnce = false; //只触发一次
     public UnityEvent onEnter;
     public UnityEvent onExit;
-    public bool triggerOnlyOnce = false; //只触发一次
 
     private string GetID()
     {
@@ -29,12 +29,16 @@ public class TriggerZone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (!enabled) return;
         if (collision.CompareTag("Player"))
         {
-            if (triggerOnlyOnce && !triggerdZones.Contains(GetID()))
+            if (triggerOnlyOnce )
             {
-                onEnter?.Invoke();
-                triggerdZones.Add(GetID());
+                if (!triggerdZones.Contains(GetID()))
+                {
+                    onEnter?.Invoke();
+                    triggerdZones.Add(GetID());
+                }
             }
             else
             {

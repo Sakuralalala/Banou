@@ -8,30 +8,31 @@ namespace GameSystem
 {
     public class DialogSystem : SubSystem<DialogSystemSetting>
     {
-        public static GameObject textPrefab;
         public static Camera camera;
 
         //输出到屏幕空间
-        public static void OutputToScreenSpace(Vector2 screenPosition)
+        public static void OutputToScreenSpace(Vector2 screenPosition, string text)
         {
             camera = Camera.main;
             float t = Mathf.Tan(camera.fieldOfView / 2);
             float y = (screenPosition.y - 0.5f) * t * 2;
             float x = (screenPosition.x - 0.5f) * t * 2;
-            textPrefab = GameObject.Instantiate(Setting.textPrefab);
-            textPrefab.transform.position = new Vector2(x, y);
-            textPrefab.transform.SetParent(camera.transform);
-            Debug.Log(new Vector2(x,y));
+            GameObject textObject = GameObject.Instantiate(Setting.textPrefab);
+            textObject.transform.position = new Vector2(x, y);
+            textObject.transform.SetParent(camera.transform);
+            textObject.GetComponent<TextMesh>().text = text;
+            Debug.Log(new Vector2(x, y));
         }
 
         //输出到世界空间
-        public static void OutputToWorldSpace(Vector3 worldPosition)
+        public static void OutputToWorldSpace(Vector3 worldPosition, string text)
         {
-            textPrefab = GameObject.Instantiate(Setting.textPrefab);
-            textPrefab.transform.position = worldPosition;
+            GameObject textObject = GameObject.Instantiate(Setting.textPrefab);
+            textObject.transform.position = worldPosition;
+            textObject.GetComponent<TextMesh>().text = text;
             Debug.Log(worldPosition);
         }
-       
+
     }
 }
 

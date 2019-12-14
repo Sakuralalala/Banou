@@ -13,12 +13,12 @@ public class DialogSystemAgent : MonoBehaviour
 
     public void TextPopUpToWorldSpace(Vector3 worldPostion)
     {
-        DialogSystem.OutputToWorldSpace(worldPostion);
-        
+        DialogSystem.OutputToWorldSpace(worldPostion, text);
+
     }
     public void TextPopUpToScreenSpace(Vector2 screenPostion)
     {
-        DialogSystem.OutputToScreenSpace(screenPostion);
-        
+        DialogSystem.OutputToScreenSpace(screenPostion, text);
+
     }
 }
