@@ -198,9 +198,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 929689152}
-  - component: {fileID: 929689151}
   - component: {fileID: 929689150}
   - component: {fileID: 929689149}
+  - component: {fileID: 929689151}
   m_Layer: 0
   m_Name: TestObject
   m_TagString: Untagged
@@ -217,25 +217,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 929689148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24bf23eabcb46b54aaa2ba263fe3fab2, type: 3}
+  m_Script: {fileID: 11500000, guid: 17ff8d00b6a554d43a7e6d473b7a82de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 929689151}
-        m_MethodName: DollHealthChange
-        m_Mode: 4
+      - m_Target: {fileID: 929689150}
+        m_MethodName: TextPopUpToScreenSpace
+        m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 5
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
+    m_TypeName: Vec2Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  input: {x: 1, y: 1}
+  invokeOnStart: 1
+  invokeOnEnable: 0
 --- !u!114 &929689150
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,7 +247,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 929689148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbde1a49d99bdf344bd77936e7c133d4, type: 3}
+  m_Script: {fileID: 11500000, guid: 25cf33e850864b44bb36d46140caba95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &929689151
@@ -257,9 +259,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 929689148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cea8c792a6aefeb419c952a38df47c9a, type: 3}
+  m_Script: {fileID: 11500000, guid: 40eeac70f07744e4895e4ee9f73d3eec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  output:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 929689150}
+        m_MethodName: TextPopUpToWorldSpace
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: Vec3Event, Assembly-CSharp, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+  invokeOnStart: 0
+  invokeOnEnable: 0
+  input: {x: 1, y: 1, z: -10}
 --- !u!4 &929689152
 Transform:
   m_ObjectHideFlags: 0

@@ -6,7 +6,7 @@ namespace GameSystem
 {
     namespace PresentSetting
     {
-        [CreateAssetMenu(fileName = "DollSystemSetting", menuName = "系统配置文件/Doll SystemS etting")]
+        [CreateAssetMenu(fileName = "DollSystemSetting", menuName = "系统配置文件/Doll System Setting")]
         public class DollSystemSetting : ScriptableObject
         {
             public float dollHealth;
