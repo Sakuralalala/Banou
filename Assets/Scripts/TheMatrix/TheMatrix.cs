@@ -367,5 +367,6 @@ public class IntEvent : UnityEvent<int> { }
 public class Vec3Event : UnityEvent<Vector3> { }
 [System.Serializable]
 public class StringEvent : UnityEvent<string> { }
-
+[System.Serializable]
+public class ColorEvent : UnityEvent<Color> { }
 

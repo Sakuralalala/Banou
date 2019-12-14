@@ -9,15 +9,10 @@ public class StressEffect : MonoBehaviour
     private void Awake()
     {
         StressSystem.onStressChange += OnStressChange;
-        
-        
     }
     
-    public void OnStressChange(float deltaStress)
+    public virtual void OnStressChange(float deltaStress)
     {
-        Debug.Log(StressSystem.stress);
-        
+        Debug.Log(StressSystem.Stress);
     }
-
-    
 }
