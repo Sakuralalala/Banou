@@ -14,7 +14,7 @@ public class LittleGirlController : MonoBehaviour
     public FloatEvent onMove;
 
     //Properties
-    [HideInInspector]
+    //[HideInInspector]
     public float speed;
     public Vector3 centerOffset = Vector3.up * 0.75f;
 
@@ -23,6 +23,7 @@ public class LittleGirlController : MonoBehaviour
         float h = Input.GetAxis("Horizontal");
         speed = h * setting.maxSpeed;
         rid2d.velocity = new Vector2(speed, 0);
+        
     }
 
 
@@ -30,6 +31,7 @@ public class LittleGirlController : MonoBehaviour
     {
         rid2d = GetComponent<Rigidbody2D>();
         GameSystem.LittleGirlSystem.theGirl = this;
+        
     }
 
     private void FixedUpdate()

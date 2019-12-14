@@ -1,0 +1,319 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46f25b3bc99084453bf98d75c854d9ca, type: 3}
+  m_Name: armatureName_Pose
+  m_EditorClassIdentifier: 
+  boneDatas:
+  - x: 0
+    y: 0
+    rotation: 0
+    sx: 1
+    sy: 1
+  - x: -0.383438
+    y: -2.4926028
+    rotation: 356.0605
+    sx: 1
+    sy: 1
+  - x: -0.24198799
+    y: -0.206762
+    rotation: 71.0063
+    sx: 1
+    sy: 1
+  - x: 0.25610098
+    y: -2.474321
+    rotation: 0
+    sx: 1
+    sy: 1
+  - x: -0.24184299
+    y: 1.8800709
+    rotation: 0
+    sx: 1
+    sy: 1
+  - x: -0.39871398
+    y: -0.130083
+    rotation: 0
+    sx: 1
+    sy: 1
+  - x: -0.025058
+    y: -0.18353398
+    rotation: 198.9695
+    sx: 1
+    sy: 1
+  - x: 0.959709
+    y: 0
+    rotation: 9.2439
+    sx: 1
+    sy: 1
+  - x: 0.99359494
+    y: -0.32792097
+    rotation: 194.3573
+    sx: 1
+    sy: 1
+  - x: 0.88893795
+    y: 0.071637
+    rotation: 290.71948
+    sx: 1
+    sy: 1
+  - x: -0.030857999
+    y: -0.21516599
+    rotation: 179.5662
+    sx: 1
+    sy: 1
+  - x: -0.021851
+    y: -0.201759
+    rotation: 207.6117
+    sx: 1
+    sy: 1
+  - x: 0.82606196
+    y: 0.00462
+    rotation: 259.6761
+    sx: 1
+    sy: 1
+  - x: 1.1251171
+    y: 0.027779
+    rotation: 351.7526
+    sx: 1
+    sy: 1
+  - x: 1.0343649
+    y: -0.26590797
+    rotation: 183.1372
+    sx: 1
+    sy: 1
+  - x: -0.057972997
+    y: -0.91125095
+    rotation: 50.7474
+    sx: 1
+    sy: 1
+  - x: 1.5097779
+    y: -0.009528
+    rotation: 218.2865
+    sx: 1
+    sy: 1
+  - x: 1.117587
+    y: 0
+    rotation: 1.1833
+    sx: 1
+    sy: 1
+  - x: 0.448356
+    y: -0.203483
+    rotation: 317.0558
+    sx: 1
+    sy: 1
+  - x: -0.077441
+    y: -0.387703
+    rotation: 310.7902
+    sx: 1
+    sy: 1
+  - x: -0.028168
+    y: -0.002561
+    rotation: 277.85742
+    sx: 1
+    sy: 1
+  - x: 0.408606
+    y: -0.60463196
+    rotation: 67.3966
+    sx: 1
+    sy: 1
+  slotDatas:
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    displayIndex: 0
+    zorder: 0
+  displayDatas:
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.42541802
+      y: -0.011829999
+      rotation: 91.6847
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.50415295
+      y: 0.007429
+      rotation: 83.4373
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.95301
+      y: -0.26714
+      rotation: 85.3437
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.20360799
+      y: 0.192273
+      rotation: 132.337
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.654283
+      y: -0.016850999
+      rotation: 268.4809
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.368106
+      y: -0.036376
+      rotation: 183.6914
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.305832
+      y: -0.010808
+      rotation: 83.2902
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.67513496
+      y: 0.0147669995
+      rotation: 89.5559
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.248043
+      y: -0.019991
+      rotation: 332.9494
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.58648497
+      y: -0.118953
+      rotation: 40.346004
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.48371798
+      y: 0.004158
+      rotation: 83.3675
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: -0.016115
+      y: 0.019112999
+      rotation: 347.0054
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.44523397
+      y: -0.020411
+      rotation: 90.59069
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.44593298
+      y: -0.060987
+      rotation: 83.3201
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.55252796
+      y: -0.111663
+      rotation: 81.5922
+      sx: 1
+      sy: 1
+    type: 0
+  - color: {r: 1, g: 1, b: 1, a: 1}
+    vertex: []
+    transform:
+      x: 0.512636
+      y: 0.055914
+      rotation: 277.7248
+      sx: 1
+      sy: 1
+    type: 0
