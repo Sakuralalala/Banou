@@ -12,6 +12,8 @@ namespace GameSystem
 
             public float heartLevel2 = 0.4f;
             public float heartLevel3 = 0.8f;
+
+            public float darkStressRate = 0.5f;
         }
     }
 }

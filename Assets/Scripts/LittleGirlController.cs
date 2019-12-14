@@ -61,4 +61,30 @@ public class LittleGirlController : MonoBehaviour
         }
 
     }
+
+    private void Update()
+    {
+        if (lightCount == 0)
+        {
+            GameSystem.StressSystem.Stress += GameSystem.StressSystem.Setting.darkStressRate * Time.deltaTime;
+        }
+    }
+
+
+    private int lightCount = 0;
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light"))
+        {
+            lightCount++;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Light"))
+        {
+            lightCount--;
+            if (lightCount < 0) lightCount = 0;
+        }
+    }
 }
