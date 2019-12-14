@@ -8,6 +8,7 @@ public class DialogEvent : MonoBehaviour
     [System.Serializable]
     public class DialogUnit
     {
+        [Multiline(2)]
         public string text;
         public float delay;
     }
