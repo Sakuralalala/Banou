@@ -12,4 +12,14 @@ public class ColorLerpEvent : MonoBehaviour
     {
         output?.Invoke(Color.Lerp(min, max, t));
     }
+
+    [ContextMenu("ToMax")]
+    public void ToMax()
+    {
+        Invoke(1);
+    }
+    public void ToMin()
+    {
+        Invoke(0);
+    }
 }
