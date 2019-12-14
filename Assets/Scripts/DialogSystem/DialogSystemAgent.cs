@@ -5,13 +5,21 @@ using GameSystem;
 
 public class DialogSystemAgent : MonoBehaviour
 {
-    
+    public string text;
+    public void SetText(string text)
+    {
+        this.text = text;
+    }
+
     public void TextPopUpToWorldSpace(Vector3 worldPostion)
     {
         DialogSystem.OutputToWorldSpace(worldPostion);
+        DialogSystem.SetText(text);
+        
     }
     public void TextPopUpToScreenSpace(Vector2 screenPostion)
     {
         DialogSystem.OutputToScreenSpace(screenPostion);
+        DialogSystem.SetText(text);
     }
 }

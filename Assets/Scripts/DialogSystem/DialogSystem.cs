@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using GameSystem.PresentSetting;
+using UnityEngine.UI;
 
 namespace GameSystem
 {
@@ -29,6 +30,10 @@ namespace GameSystem
             textPrefab = GameObject.Instantiate(Setting.textPrefab);
             textPrefab.transform.position = worldPosition;
             Debug.Log(worldPosition);
+        }
+        public static void SetText(string text)
+        {
+            textPrefab.GetComponent<Text>().text = text;
         }
     }
 }
