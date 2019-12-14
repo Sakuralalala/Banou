@@ -8,7 +8,7 @@ namespace GameSystem
     public class EnemySystem : SubSystem<EnemySystemSetting>
     {
         
-        public static GameObject enemy;
+        public static GameObject enemyObject;
         public static bool[] roomIsLight;
         //敌人所在的房间编号
         public static int roomIndex;
@@ -30,14 +30,14 @@ namespace GameSystem
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
             Debug.Log(currentSceneName.Length);
-            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length));
+            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length-5));
             
 
             if(index == roomIndex)
             {
                 //设置怪物生成位置
                 int xPoint = Random.Range(Setting.xPointMin, Setting.xPointMax);
-                GameObject enemyObject = GameObject.Instantiate(Setting.enemyPrefab);
+                enemyObject = GameObject.Instantiate(Setting.enemyPrefab);
                 if(level <= Setting.maxLevel)
                 {
                     DialogSystem.OutputToWorldSpace(new Vector3(Setting.xTextPoint, Setting.yTextPoint), Setting.texts[level]);
@@ -63,12 +63,13 @@ namespace GameSystem
                 if(level < Setting.maxLevel)
                 {
                     level++;
-                    scale += scale * Setting.scaleValue;
+                    scale += level * Setting.scaleValue;
                     //模型变大
-                    enemy.transform.localScale = scale * new Vector3(1, 1, 1);
-                    timeRamined -= timeRamined * Setting.stepTimeValue;
+                    
+                    timeRamined -= level * Setting.stepTimeValue;
                     Debug.Log(level);
                 }
+                enemyObject.transform.localScale = scale * new Vector3(1, 1, 1);
             }
             
         }
@@ -77,7 +78,7 @@ namespace GameSystem
         public static bool IsCurrentSceneLight()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            int index = int.Parse(currentSceneName.Substring(4, currentSceneName.Length));
+            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length-5));
             return roomIsLight[index];
         }
 
@@ -97,7 +98,7 @@ namespace GameSystem
         {
             while (true)
             {
-                //Debug.Log("怪物开始找房间");
+                Debug.Log("怪物开始找房间");
                 if (level < Setting.maxLevel)
                 {
                     //未被激怒状态
@@ -126,13 +127,13 @@ namespace GameSystem
                     yield return 0;
                 }
 
-               // Debug.Log("怪物出现在Room "+roomIndex);
-                //Debug.Log("倒计时时间为"+timeRamined);
+                Debug.Log("怪物出现在Room "+roomIndex);
+                Debug.Log("倒计时时间为"+timeRamined);
                 //倒计时,重新选房间
                 yield return new WaitForSeconds(timeRamined);
 
                 //倒计时结束
-                //Debug.Log("倒计时结束");
+                Debug.Log("倒计时结束");
             }
             
         }

@@ -9,6 +9,7 @@ public class LightController : MonoBehaviour
     public UnityEvent dimOut;
     public UnityEvent lightOn;
 
+    [ContextMenu("DimOut")]
     public void DimOut()
     {
         if (isOn)
@@ -17,6 +18,7 @@ public class LightController : MonoBehaviour
             isOn = false;
         }
     }
+    [ContextMenu("LightOn")]
     public void LightOn()
     {
         if (!isOn)
