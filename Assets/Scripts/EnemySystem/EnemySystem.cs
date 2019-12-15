@@ -59,6 +59,7 @@ namespace GameSystem
             if (IsMeetEnemy())
             {
                 Debug.Log("与敌人在同一个场景中");
+                if (StressSystem.Stress >= StressSystem.Setting.maxStress * 0.95f) TheMatrix.SendGameMessage(GameMessage.GameOver);
                 if (level < Setting.maxLevel)
                 {
                     level++;
@@ -72,7 +73,7 @@ namespace GameSystem
                 enemyObject.transform.localScale = scale * new Vector3(1, 1, 1);
                 //笑声
                 enemyObject.GetComponent<SimpleEvent>()?.Invoke();
-                StressSystem.Stress += Setting.stressValue[Mathf.Min(3, level)];
+                //StressSystem.Stress += Setting.stressValue[Mathf.Min(3, level)];
             }
 
         }
