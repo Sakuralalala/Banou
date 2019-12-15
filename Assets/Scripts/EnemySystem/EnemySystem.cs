@@ -38,7 +38,7 @@ namespace GameSystem
                 int xPoint = Random.Range(Setting.xPointMin, Setting.xPointMax);
                 enemyObject = GameObject.Instantiate(Setting.enemyPrefab);
                 enemyObject.transform.position = new Vector3(xPoint, Setting.yPoint, 0);
-                if (level <= Setting.maxLevel)
+                if (level < Setting.maxLevel)
                 {
                     DialogSystem.OutputToWorldSpace(new Vector3(Setting.xTextPoint, Setting.yTextPoint) + enemyObject.transform.position, Setting.texts[level]);
                 }

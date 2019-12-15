@@ -14,12 +14,12 @@ public class LightManager : StressEffect
         //TODO 打乱顺序
         LightController[] lightTemp;
         lightTemp = new LightController[lightControllers.Length];
-        for(int i = 0; i < lightTemp.Length; i++)
+        for (int i = 0; i < lightTemp.Length; i++)
         {
             lightTemp[i] = lightControllers[i];
         }
         System.Random rand = new System.Random(DateTime.Now.Millisecond);
-        for(int i = 0; i < lightTemp.Length; i++)
+        for (int i = 0; i < lightTemp.Length; i++)
         {
             int x, y;
             LightController light;
@@ -34,7 +34,7 @@ public class LightManager : StressEffect
         }
         lightControllers = lightTemp;
         //Over
-        
+
         foreach (LightController lc in lightControllers)
         {
             lc.GetComponentInChildren<ParticleSystem>()?.collision.SetPlane(0, transform);
@@ -47,13 +47,13 @@ public class LightManager : StressEffect
         float l = GameSystem.StressSystem.Stress / GameSystem.StressSystem.Setting.maxStress * (lightControllers.Length + 1);
         while (l > dimIndex + 1)
         {
-            lightControllers[dimIndex].DimOut();
+            lightControllers[dimIndex]?.DimOut();
             dimIndex++;
         }
         while (l < dimIndex)
         {
             dimIndex--;
-            lightControllers[dimIndex].LightOn();
+            lightControllers[dimIndex]?.LightOn();
         }
     }
 }
