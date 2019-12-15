@@ -26,10 +26,11 @@ MonoBehaviour:
   yTextPoint: 0
   xTextPoint: 0
   texts:
-  - 111
-  - 222
-  - 333
+  - "\u53C8\u89C1\u9762\u4E86\u5462~"
+  - "\u4F60\u53C8\u6765\u89C1\u6211\u4E86\u5417\uFF1F"
+  - "\u770B\u6765\u4F60\u771F\u7684\u5F88\u559C\u6B22\u6211\u5462~"
   stressValue:
   - 20
   - 20
   - 20
+  happyEndingRoomCount: 0

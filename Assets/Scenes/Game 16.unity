@@ -5102,7 +5102,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  invokeOnStart: 0
+  invokeOnStart: 1
 --- !u!114 &680001113
 MonoBehaviour:
   m_ObjectHideFlags: 0

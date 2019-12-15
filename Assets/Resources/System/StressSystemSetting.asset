@@ -13,3 +13,6 @@ MonoBehaviour:
   m_Name: StressSystemSetting
   m_EditorClassIdentifier: 
   maxStress: 100
+  heartLevel2: 0.4
+  heartLevel3: 0.8
+  darkStressRate: 4

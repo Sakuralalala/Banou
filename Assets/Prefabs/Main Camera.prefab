@@ -775,7 +775,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   realtimeControl: 0
   relativeStress: 0
-  delta: -20
+  delta: -60
 --- !u!1 &1137692625
 GameObject:
   m_ObjectHideFlags: 0
