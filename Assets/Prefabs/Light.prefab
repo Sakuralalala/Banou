@@ -5546,8 +5546,8 @@ MonoBehaviour:
   output:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 521526199530494826}
-        m_MethodName: LightOn
+      - m_Target: {fileID: 969448186}
+        m_MethodName: ToMax
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5559,7 +5559,7 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
-  invokeOnStart: 0
+  invokeOnStart: 1
 --- !u!82 &5398050762375902997
 AudioSource:
   m_ObjectHideFlags: 0
