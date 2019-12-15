@@ -72,7 +72,7 @@ namespace GameSystem
                 enemyObject.transform.localScale = scale * new Vector3(1, 1, 1);
                 //笑声
                 enemyObject.GetComponent<SimpleEvent>()?.Invoke();
-                StressSystem.Stress += Setting.stressValue[level];
+                StressSystem.Stress += Setting.stressValue[Mathf.Min(3, level)];
             }
 
         }
