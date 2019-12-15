@@ -54,7 +54,7 @@ namespace GameSystem
             EnemySystem.StartEnemyActionCoroutine();
             //监测游戏状态
             StartCoroutine(EnemySystem.GameOverCheck());
-            
+
             GetComponent<AudioSource>().Play();
 
             ResetGameMessage();
@@ -81,10 +81,11 @@ namespace GameSystem
         public string _gameOver;
         private IEnumerator _GameOver()
         {
+            EnemySystem.StopEnemyActionCoroutine();
+            yield return 0;
             SceneManager.LoadScene(_gameOver);
 
             GetComponent<AudioSource>().Stop();
-            EnemySystem.StopEnemyActionCoroutine();
 
             ResetGameMessage();
             while (true)

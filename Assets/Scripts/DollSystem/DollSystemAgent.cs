@@ -16,7 +16,11 @@ public class DollSystemAgent : MonoBehaviour
     public void TortureDoll()
     {
         DollSystem.dollHealth--;
-        if (DollSystem.dollHealth < 0) TheMatrix.SendGameMessage(GameMessage.GameOver);
+        if (DollSystem.dollHealth < 0)
+        {
+            TheMatrix.SendGameMessage(GameMessage.GameOver);
+            DollSystem.dollHealth = 0;
+        }
         else
         {
             GetComponent<Image>().overrideSprite = DollSystem.Setting.dollPics[DollSystem.dollHealth];

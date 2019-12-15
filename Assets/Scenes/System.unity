@@ -97,7 +97,7 @@ LightmapSettings:
     m_ShowResolutionOverlay: 1
     m_ExportTrainingData: 0
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 0
+  m_UseShadowmask: 1
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -249,7 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _startScene: StartScene
   _inGame: Room 8
-  _gameOver: GameWin
+  _gameOver: Game 16
   _gameWin: 
   test: 1
   saveData: 0
