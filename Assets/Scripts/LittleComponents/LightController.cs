@@ -18,7 +18,7 @@ public class LightController : MonoBehaviour
         {
             dimOut?.Invoke();
             isOn = false;
-            col = gameObject?.GetComponentInChildren<Collider2D>();
+            col = this?.GetComponentInChildren<Collider2D>();
             if (col) col.enabled = false;
         }
     }

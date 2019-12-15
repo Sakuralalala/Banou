@@ -147,11 +147,12 @@ namespace GameSystem
         {
             while (true)
             {
-                if(StressSystem.Stress >= 0.9*StressSystem.Setting.maxStress && IsMeetEnemy())
+                yield return 0;
+                if (StressSystem.Stress >= 0.9 * StressSystem.Setting.maxStress && IsMeetEnemy())
                 {
                     TheMatrix.SendGameMessage(GameMessage.GameOver);
                 }
-                if(SceneManager.GetActiveScene().name == "GameWin")
+                if (SceneManager.GetActiveScene().name == "GameWin")
                 {
                     TheMatrix.SendGameMessage(GameMessage.GameWin);
                 }
