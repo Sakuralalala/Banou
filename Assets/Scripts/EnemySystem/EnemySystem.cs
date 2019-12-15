@@ -21,8 +21,8 @@ namespace GameSystem
         public static float stepTimeValue;
         //敌人在房间停留时间
         public static float timeRamined { get; set; }
-
-        public static bool isGameOver;
+        //游戏是否通关
+        public static bool isHappyEnding;
 
         //判断是否与敌人在同一场景
         //生成怪物，怪物文本
@@ -70,7 +70,8 @@ namespace GameSystem
                 }
                 Debug.Log(scale);
                 enemyObject.transform.localScale = scale * new Vector3(1, 1, 1);
-
+                //笑声
+                enemyObject.GetComponent<SimpleEvent>()?.Invoke();
                 StressSystem.Stress += Setting.stressValue[level];
             }
 
@@ -140,7 +141,22 @@ namespace GameSystem
 
         }
 
+        //public static void StartGameOverCheck()
 
+        public static IEnumerator GameOverCheck()
+        {
+            while (true)
+            {
+                if(StressSystem.Stress >= 0.9*StressSystem.Setting.maxStress && IsMeetEnemy())
+                {
+                    TheMatrix.SendGameMessage(GameMessage.GameOver);
+                }
+                if(SceneManager.GetActiveScene().name == "GameWin")
+                {
+                    TheMatrix.SendGameMessage(GameMessage.GameWin);
+                }
+            }
+        }
 
 
 
