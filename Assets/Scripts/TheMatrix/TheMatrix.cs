@@ -51,8 +51,10 @@ namespace GameSystem
         private IEnumerator _InGame()
         {
             SceneManager.LoadScene(_inGame);
-
-            EnemySystem.StartEnemyActionCoroutine();
+            EnemySystem.
+            //监测游戏状态
+            StartCoroutine(EnemySystem.GameOverCheck());
+            
             GetComponent<AudioSource>().Play();
 
             ResetGameMessage();
@@ -64,13 +66,18 @@ namespace GameSystem
                     StartCoroutine(_GameOver());
                     yield break;
                 }
+                if (GetGameMessage(GameMessage.GameWin))
+                {
+                    StartCoroutine(_GameWin());
+                    yield break;
+                }
                 if (GetGameMessage(GameMessage.Exit))
                 {
                     Application.Quit();
                 }
             }
         }
-
+        //游戏结束
         public string _gameOver;
         private IEnumerator _GameOver()
         {
@@ -86,6 +93,21 @@ namespace GameSystem
                 if (GetGameMessage(GameMessage.Next)) break;
             }
 
+            StartCoroutine(_StartScene());
+        }
+        //游戏胜利
+        public string _gameWin;
+        private IEnumerator _GameWin()
+        {
+            SceneManager.LoadScene(_gameWin);
+            GetComponent<AudioSource>().Stop();
+            EnemySystem.StopEnemyActionCoroutine();
+            ResetGameMessage();
+            while (true)
+            {
+                yield return 0;
+                if (GetGameMessage(GameMessage.Next)) break;
+            }
             StartCoroutine(_StartScene());
         }
 
@@ -399,7 +421,8 @@ namespace GameSystem
         Next,
         Return,
         Exit,
-        GameOver
+        GameOver,
+        GameWin
     }
 }
 

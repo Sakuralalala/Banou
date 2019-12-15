@@ -36,6 +36,8 @@ namespace GameSystem
             public string[] texts;
             //见面增加的压力值
             public float[] stressValue;
+            //通关所需
+            public int happyEndingRoomCount;
         }
     }
 }
