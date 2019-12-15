@@ -7,7 +7,7 @@ namespace GameSystem
 {
     public class EnemySystem : SubSystem<EnemySystemSetting>
     {
-        
+
         public static GameObject enemyObject;
         public static bool[] roomIsLight;
         //敌人所在的房间编号
@@ -23,27 +23,26 @@ namespace GameSystem
         public static float timeRamined { get; set; }
 
         public static bool isGameOver;
-       
+
         //判断是否与敌人在同一场景
         //生成怪物，怪物文本
         private static bool IsMeetEnemy()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            Debug.Log(currentSceneName.Length);
-            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length-5));
-            
+            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length - 5));
 
-            if(index == roomIndex)
+
+            if (index == roomIndex)
             {
                 //设置怪物生成位置
                 int xPoint = Random.Range(Setting.xPointMin, Setting.xPointMax);
                 enemyObject = GameObject.Instantiate(Setting.enemyPrefab);
-                if(level <= Setting.maxLevel)
+                enemyObject.transform.position = new Vector3(xPoint, Setting.yPoint, 0);
+                if (level <= Setting.maxLevel)
                 {
-                    DialogSystem.OutputToWorldSpace(new Vector3(Setting.xTextPoint, Setting.yTextPoint), Setting.texts[level]);
+                    DialogSystem.OutputToWorldSpace(new Vector3(Setting.xTextPoint, Setting.yTextPoint) + enemyObject.transform.position, Setting.texts[level]);
                 }
-                
-                enemyObject.transform.position = new Vector3(xPoint, Setting.yPoint);
+
                 return true;
             }
             else
@@ -60,25 +59,28 @@ namespace GameSystem
             if (IsMeetEnemy())
             {
                 Debug.Log("与敌人在同一个场景中");
-                if(level < Setting.maxLevel)
+                if (level < Setting.maxLevel)
                 {
                     level++;
                     scale += level * Setting.scaleValue;
                     //模型变大
-                    
+
                     timeRamined -= level * Setting.stepTimeValue;
                     Debug.Log(level);
                 }
+                Debug.Log(scale);
                 enemyObject.transform.localScale = scale * new Vector3(1, 1, 1);
+
+                StressSystem.Stress += Setting.stressValue[level];
             }
-            
+
         }
 
         //判断当前场景是否熄灯
         public static bool IsCurrentSceneLight()
         {
             string currentSceneName = SceneManager.GetActiveScene().name;
-            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length-5));
+            int index = int.Parse(currentSceneName.Substring(5, currentSceneName.Length - 5));
             return roomIsLight[index];
         }
 
@@ -102,7 +104,7 @@ namespace GameSystem
                 if (level < Setting.maxLevel)
                 {
                     //未被激怒状态
-                    roomIndex = Random.Range(0, Setting.maxRoom);
+                    roomIndex = Random.Range(1, Setting.maxRoom);
                     string sceneNameCurrent = SceneManager.GetActiveScene().name;
                     while (("Room " + roomIndex.ToString()) == sceneNameCurrent)
                     {
@@ -127,15 +129,15 @@ namespace GameSystem
                     yield return 0;
                 }
 
-                Debug.Log("怪物出现在Room "+roomIndex);
-                Debug.Log("倒计时时间为"+timeRamined);
+                Debug.Log("怪物出现在Room " + roomIndex);
+                Debug.Log("倒计时时间为" + timeRamined);
                 //倒计时,重新选房间
                 yield return new WaitForSeconds(timeRamined);
 
                 //倒计时结束
                 Debug.Log("倒计时结束");
             }
-            
+
         }
 
 
@@ -150,6 +152,7 @@ namespace GameSystem
         private static void Init()
         {
             //Init here
+            Debug.Log("Enemy System Inited");
             timeRamined = Setting.maxStepTime;
         }
 

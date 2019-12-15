@@ -11,7 +11,7 @@ public class LittleGirlController : MonoBehaviour
     public Vector3 referencePos { get => transform.position + centerOffset; }   //参考中心点
 
     //Events
-    public FloatEvent onSpeedChage;
+    public FloatEvent onSpeedChange;
     public FloatEvent onMove;
 
     //Properties
@@ -23,8 +23,9 @@ public class LittleGirlController : MonoBehaviour
     {
         float h = Input.GetAxis("Horizontal");
         speed = h * setting.maxSpeed;
+        onSpeedChange?.Invoke(Mathf.Abs(speed));
         rid2d.velocity = new Vector2(speed, 0);
-        
+        onMove?.Invoke(Mathf.Abs(speed) * Time.deltaTime);
     }
 
 
@@ -33,7 +34,7 @@ public class LittleGirlController : MonoBehaviour
         rid2d = GetComponent<Rigidbody2D>();
         animator = GetComponentInChildren<Animator>();
         GameSystem.LittleGirlSystem.theGirl = this;
-        
+
     }
 
     private void FixedUpdate()
@@ -55,7 +56,7 @@ public class LittleGirlController : MonoBehaviour
         {
             GetComponentInChildren<SpriteRenderer>().flipX = true;
         }
-        else if(speed <0)
+        else if (speed < 0)
         {
             GetComponentInChildren<SpriteRenderer>().flipX = false;
         }

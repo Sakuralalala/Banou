@@ -52,6 +52,9 @@ namespace GameSystem
         {
             SceneManager.LoadScene(_inGame);
 
+            EnemySystem.StartEnemyActionCoroutine();
+            GetComponent<AudioSource>().Play();
+
             ResetGameMessage();
             while (true)
             {
@@ -72,6 +75,9 @@ namespace GameSystem
         private IEnumerator _GameOver()
         {
             SceneManager.LoadScene(_gameOver);
+
+            GetComponent<AudioSource>().Stop();
+            EnemySystem.StopEnemyActionCoroutine();
 
             ResetGameMessage();
             while (true)

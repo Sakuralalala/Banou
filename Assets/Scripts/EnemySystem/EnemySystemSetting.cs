@@ -34,6 +34,8 @@ namespace GameSystem
             public int xTextPoint;
             //文本列表
             public string[] texts;
+            //见面增加的压力值
+            public float[] stressValue;
         }
     }
 }

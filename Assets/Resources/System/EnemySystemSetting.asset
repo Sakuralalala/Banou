@@ -15,17 +15,21 @@ MonoBehaviour:
   maxRoom: 5
   roomIsLight: 0000000000
   maxLevel: 3
-  maxStepTime: 5
+  maxStepTime: 40
   scaleValue: 1
   stepTimeValue: 1
-  enemyPrefab: {fileID: 4152517407060546803, guid: 351ecdb2d11ddd34e94ab407d11f42f5,
+  enemyPrefab: {fileID: 1250489670127226474, guid: 00249e5e41b758048ba5667f6c701613,
     type: 3}
   xPointMin: -4
   xPointMax: 4
-  yPoint: 0
+  yPoint: 1
   yTextPoint: 0
   xTextPoint: 0
   texts:
   - 111
   - 222
   - 333
+  stressValue:
+  - 20
+  - 20
+  - 20
