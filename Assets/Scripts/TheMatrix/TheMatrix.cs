@@ -51,7 +51,7 @@ namespace GameSystem
         private IEnumerator _InGame()
         {
             SceneManager.LoadScene(_inGame);
-            EnemySystem.
+            EnemySystem.StartEnemyActionCoroutine();
             //监测游戏状态
             StartCoroutine(EnemySystem.GameOverCheck());
             

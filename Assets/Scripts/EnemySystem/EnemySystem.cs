@@ -109,7 +109,7 @@ namespace GameSystem
                     string sceneNameCurrent = SceneManager.GetActiveScene().name;
                     while (("Room " + roomIndex.ToString()) == sceneNameCurrent)
                     {
-                        roomIndex = Random.Range(0, Setting.maxRoom);
+                        roomIndex = Random.Range(1, Setting.maxRoom);
                         yield return 0;
                     }
 
@@ -126,7 +126,7 @@ namespace GameSystem
                             yield return 0;
                         }
                     }
-                    roomIndex = Random.Range(0, doors.Length);
+                    roomIndex = Random.Range(1, doors.Length);
                     yield return 0;
                 }
 
